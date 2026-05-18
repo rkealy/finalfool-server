@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Final Fool - Idiot Card game Online</title>
+    <link rel="stylesheet" href="mobile.css" />
+    <link rel="stylesheet" href="mobile-online.css" />
+  </head>
+  <body>
+    <div class="fireworks" id="fireworks" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <aside
+      class="interactive-ad"
+      id="interactiveAd"
+      aria-hidden="true"
+      data-ad-provider="admob"
+      data-ad-format="interstitial"
+      data-admob-app-id="ca-app-pub-2729299555348674~8941819504"
+      data-admob-interstitial-unit-id="ca-app-pub-2729299555348674/6893406513"
+    >
+      <div class="interactive-ad-card">
+        <div>
+          <p class="eyebrow">Interstitial Ad</p>
+          <h2>End of game ad</h2>
+        </div>
+        <div class="ad-play-area">
+          <button type="button">Tap to Play</button>
+        </div>
+        <button type="button" id="closeInteractiveAd">Close</button>
+      </div>
+    </aside>
+    <main class="app online-app">
+      <section class="mode-switch">
+        <label class="field">
+          <span>Game mode</span>
+          <select id="gameMode">
+            <option value="solo">One player with bots</option>
+            <option value="multiplayer" selected>Online multiplayer</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="setup" id="lobbyPanel">
+        <div class="brand">
+          <span class="brand-mark">FF</span>
+          <div>
+            <h1>Final Fool - Idiot Card Game</h1>
+          </div>
+        </div>
+
+        <div class="setup-grid online-lobby-grid">
+          <label class="field">
+            <span>Your name</span>
+            <input id="playerName" maxlength="18" value="Player" />
+          </label>
+
+          <button class="primary" id="createRoomButton">Create Room</button>
+
+          <label class="field">
+            <span>Room code</span>
+            <input id="roomCodeInput" maxlength="6" placeholder="ABC123" />
+          </label>
+          <button id="joinRoomButton">Join Room</button>
+        </div>
+
+        <div class="online-status" id="onlineStatus">Connect to the online server to create or join a room.</div>
+      </section>
+
+      <section class="setup room-panel" id="roomPanel" hidden>
+        <div class="room-head">
+          <div>
+            <p class="eyebrow">Room</p>
+            <h2 id="roomCodeLabel">----</h2>
+          </div>
+          <button id="startGameButton" class="primary" disabled>Deal Game</button>
+        </div>
+        <div class="room-list" id="roomPlayers"></div>
+      </section>
+
+      <section class="setup online-leaderboard" id="leaderboardPanel" hidden>
+        <div class="leaderboard-head">
+          <h2>Multiplayer Leaderboard</h2>
+        </div>
+        <div class="leaderboard-table" id="leaderboard"></div>
+      </section>
+
+      <section class="table">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow" id="phaseLabel">Online</p>
+            <h2 id="turnLabel">Join or create a room</h2>
+          </div>
+          <div class="stats">
+            <div>
+              <span>Draw</span>
+              <strong id="drawCount">0</strong>
+            </div>
+            <div>
+              <span>Pile</span>
+              <strong id="pileCount">0</strong>
+            </div>
+            <div>
+              <span>Order</span>
+              <strong id="orderLabel">Left</strong>
+            </div>
+          </div>
+        </header>
+
+        <div class="message" id="message">Waiting for a room.</div>
+
+        <section class="pile-zone">
+          <div class="deck-stack" aria-label="Draw pile">
+            <div class="card back small"></div>
+            <span id="drawBadge">0</span>
+          </div>
+          <div class="discard" id="discardPile" aria-label="Discard pile"></div>
+          <div class="legend">
+            <span><b>2</b> any</span>
+            <span><b>5</b> 5 or less</span>
+            <span><b>10</b> burn</span>
+            <span><b>Joker</b> reverse</span>
+          </div>
+        </section>
+
+        <section class="players" id="players"></section>
+      </section>
+
+      <section class="controls" id="controls">
+        <button id="playButton" class="primary" disabled>Play Selected</button>
+        <button id="pickupButton" disabled>Pick Up Pile</button>
+        <button id="doneSwapButton" disabled>Ready</button>
+      </section>
+    </main>
+    <aside
+      class="ad-banner"
+      aria-label="AdMob banner ad"
+      data-ad-provider="admob"
+      data-admob-app-id="ca-app-pub-2729299555348674~8941819504"
+      data-admob-banner-unit-id="ca-app-pub-2729299555348674/2220269578"
+    >
+      AdMob Banner
+    </aside>
+
+    <script src="src/online-client.js"></script>
+    <script src="src/mode-switch.js"></script>
+  </body>
+</html>

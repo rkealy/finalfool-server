@@ -1,0 +1,145 @@
+.online-app {
+  padding-bottom: calc(92px + var(--safe-bottom));
+}
+
+.online-app .brand h1 {
+  font-family: "Nexa Slab", Rockwell, "Roboto Slab", Georgia, serif;
+  font-weight: 900;
+}
+
+.online-status {
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fffaf0;
+  color: var(--muted);
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.online-lobby-grid {
+  grid-template-columns: minmax(96px, 1fr) auto minmax(96px, 1fr) auto;
+  align-items: end;
+}
+
+.online-lobby-grid .field {
+  min-width: 0;
+}
+
+.online-lobby-grid button {
+  min-width: 76px;
+  padding: 0 10px;
+}
+
+.room-panel {
+  display: block;
+}
+
+.room-panel[hidden] {
+  display: none;
+}
+
+.room-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.room-head h2 {
+  font-size: 22px;
+}
+
+.room-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.room-player {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fffaf0;
+  padding: 9px 10px;
+  font-weight: 800;
+}
+
+.room-player span:last-child {
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.room-panel.compact {
+  padding: 9px 10px;
+}
+
+.room-panel.compact .room-head {
+  display: none;
+}
+
+.room-panel.compact .room-list {
+  margin-top: 0;
+}
+
+.room-panel.compact .room-player {
+  min-height: 38px;
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 250, 240, 0.92);
+  padding: 7px 10px;
+}
+
+.room-panel.compact .compact-summary span:last-child {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.players {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  background:
+    linear-gradient(rgba(15, 74, 55, 0.94), rgba(15, 74, 55, 0.94)),
+    repeating-linear-gradient(45deg, transparent 0 12px, rgba(255, 255, 255, 0.07) 12px 14px);
+  padding: 10px;
+}
+
+.player {
+  border-color: rgba(255, 255, 255, 0.22);
+  background:
+    linear-gradient(rgba(15, 74, 55, 0.9), rgba(15, 74, 55, 0.9)),
+    repeating-linear-gradient(45deg, transparent 0 12px, rgba(255, 255, 255, 0.07) 12px 14px);
+}
+
+.player-head h3,
+.zone-label {
+  color: #fff9ea;
+}
+
+.badge {
+  background: rgba(255, 250, 240, 0.92);
+  color: var(--felt-dark);
+}
+
+.card.joker {
+  background: #fffdf7;
+  color: var(--red);
+  font-size: 30px;
+  font-family: Georgia, serif;
+  font-weight: 900;
+  line-height: 1;
+}
+
+@media (max-width: 430px) {
+  .online-lobby-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .online-lobby-grid .field {
+    grid-column: span 1;
+  }
+}
