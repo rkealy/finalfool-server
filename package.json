@@ -1,0 +1,10 @@
+{
+  "name": "finalfool-server",
+  "type": "module",
+  "scripts": {
+    "start": "node online-server.mjs"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}
